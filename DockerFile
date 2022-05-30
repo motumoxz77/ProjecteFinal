@@ -1,5 +1,5 @@
 FROM node:14
-WORKDIR /app1
+WORKDIR /app
 COPY ["paquete.json", "paquete-lock.json*", "./"]
 RUN npm install
 COPY . .
