@@ -4,3 +4,4 @@ COPY ["paquete.json", "paquete-lock.json*", "./"]
 RUN npm install
 COPY . .
 CMD ["npm", "start"]
+
