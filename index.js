@@ -1,19 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
-const app = express();
+//Inicialització de les variables corresponents per tal d'utilitzar aquest moduls.
+const app = express(); 
 
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
 
-// Connect to MongoDB
+//Connexió a la BDD de MongoDB
 mongoose
   .connect(
-    'mongodb://mongo:27017/docker-node-mongo',
-    { useNewUrlParser: true }
+    'mongodb+srv://prueba:55@cluster0.zit7ikz.mongodb.net/?retryWrites=true&w=majority',
+    { useNewUrlParser: true } //Introduir la URL que proporciona MONGODB
   )
-  .then(() => console.log('MongoDB Connected'))
+  .then(() => console.log('Connexió correcte a MongoDB'))
   .catch(err => console.log(err));
 
 const Item = require('./models/Item');
@@ -32,6 +32,6 @@ app.post('/item/add', (req, res) => {
   newItem.save().then(item => res.redirect('/'));
 });
 
-const port = 3000;
+const port = 3000;  
 
 app.listen(port, () => console.log('Server running...'));
