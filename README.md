@@ -5,6 +5,8 @@ Tutorial
 
 [Docker compose : NodeJS with MongoDB](https://www.bogotobogo.com/DevOps/Docker/Docker-Compose-Node-MongoDB.php) 
 
+-Explicacio Creació Docker;
+
 En primer lloc, utilitzarem la comanda “npm init -y” per tal de auto generar les dependencies corresponents en un arxiu anomenat package.json . 
 Una vegada generem les dependencias del projecte instalarem un modul per conectar-nos a la nostre base de dades de “MongoDB” anomentat mongoose amb la següent comanda; “npm i mongoose”.
 El Dockerfile ens servirà per a crear la imatge del contenidor que utilitzarem, es a dir, es un fitcher que conte les instrucciones necessàries per a que Docker pugui generar una imatge.
