@@ -32,6 +32,6 @@ app.post('/item/add', (req, res) => {
   newItem.save().then(item => res.redirect('/'));
 });
 
-const port = 3000;
+const port = 3000; //valor del puerto
 
-app.listen(port, () => console.log('Server running...'));
+app.listen(port, () => console.log('Server listening on port',3000));
