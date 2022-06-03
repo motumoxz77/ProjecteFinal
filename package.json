@@ -2,14 +2,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "ejs": "^3.1.2",
     "express": "^4.16.3",
-    "mongoose": "^5.2.7"
+    "mongoose": "^5.13.14"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+  "name": "projectefinal",
+  "description": "Tutorial\r ---------",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motumoxz77/ProjecteFinal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/motumoxz77/ProjecteFinal/issues"
+  },
+  "homepage": "https://github.com/motumoxz77/ProjecteFinal#readme"
 }
