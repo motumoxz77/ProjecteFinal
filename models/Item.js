@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 //Estructura del model de dades d'un Usuari
 //Esquema d'un usuari
-const ItemSchema = new Schema({
+const userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -16,5 +16,5 @@ const ItemSchema = new Schema({
     required: true
   }
 });
-
-module.exports = Item = mongoose.model('item', ItemSchema);
+//Exportem el model de dades
+module.exports = Item = mongoose.model('Usuari', userSchema);

@@ -16,21 +16,24 @@ mongoose
   .then(() => console.log('Connexió correcte a MongoDB'))
   .catch(err => console.log(err));
 
-const Item = require('./models/Item');
+//Importarem el nostre model de dades indicant la ruta corresponent
+const userSchema = require('./models/Item');
+
+app.post('/item/add', (req, res) => {
+  const user = new Item({
+    name: req.body.name
+  });
+
+  user.save().then(item => res.redirect('/'));
+});
 
 app.get('/', (req, res) => {
-  Item.find()
+  userSchema.find()
     .then(items => res.render('index', { items }))
     .catch(err => res.status(404).json({ msg: 'No items found' }));
 });
 
-app.post('/item/add', (req, res) => {
-  const newItem = new Item({
-    name: req.body.name
-  });
 
-  newItem.save().then(item => res.redirect('/'));
-});
 
 const port = 3000;  
 
