@@ -28,7 +28,7 @@ app.post("/users", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-//ENDPOINT per obtenir usuaris
+//ENDPOINT per obtenir tots elsusuaris
 app.get("/users", (req, res) => {
   userSchema
     .find()
@@ -36,14 +36,34 @@ app.get("/users", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-/*
-app.get('/', (req, res) => {
-  userSchema.find()
-    .then(items => res.render('index', { items }))
-    .catch(err => res.status(404).json({ msg: 'No items found' }));
-});*/
+//ENDPOINT per trobar usuari en concret
+app.get("/users/:id", (req, res) => {
+  const { id } = req.params;
+  userSchema
+    .findById(id)
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+//ENDPOINT per actualitzar un usuari en concret
+app.put("/users/:id", (req, res) => {
+  const { id } = req.params;
+  const { name, username, password } = req.body;
+  userSchema
+    .updateOne({ _id: id }, { $set: { name, username, password } })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
 
 
+//ENDPOINT per eliminar usuari
+// delete a user
+app.delete("/users/:id", (req, res) => {
+  const { id } = req.params;
+  userSchema
+    .remove({ _id: id })
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
 
 const port = 3000;  
 
