@@ -27,6 +27,9 @@ app.post('/item/add', (req, res) => {
   user.save().then(item => res.redirect('/'));
 });
 
+const 
+
+
 app.get('/', (req, res) => {
   userSchema.find()
     .then(items => res.render('index', { items }))
