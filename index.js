@@ -19,6 +19,12 @@ mongoose
 //Importarem el nostre model de dades indicant la ruta corresponent
 const userSchema = require('./models/Item');
 
+app.get('/', (req, res) => {
+  userSchema.find()
+    .then(items => res.render('index', { items }))
+    .catch(err => res.status(404).json({ msg: 'No items found' }));
+});
+
 app.post('/item/add', (req, res) => {
   const user = new Item({
     name: req.body.name
@@ -30,11 +36,6 @@ app.post('/item/add', (req, res) => {
 const 
 
 
-app.get('/', (req, res) => {
-  userSchema.find()
-    .then(items => res.render('index', { items }))
-    .catch(err => res.status(404).json({ msg: 'No items found' }));
-});
 
 
 
