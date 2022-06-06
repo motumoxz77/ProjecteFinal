@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 //Estructura del model de dades d'un Usuari
+
 //Esquema d'un usuari
 const userSchema = new Schema({
   name: {

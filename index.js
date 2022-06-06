@@ -7,6 +7,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: false }));
 
+
 //Connexió a la BDD de MongoDB
 mongoose
   .connect(
@@ -25,19 +26,14 @@ app.get('/', (req, res) => {
     .catch(err => res.status(404).json({ msg: 'No items found' }));
 });
 
+//Crear usuari
 app.post('/item/add', (req, res) => {
   const user = new Item({
     name: req.body.name
   });
-
+  //Amb el save guardem l'usuari a la BDD de MongoDB
   user.save().then(item => res.redirect('/'));
 });
-
-const 
-
-
-
-
 
 const port = 3000;  
 
