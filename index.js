@@ -5,7 +5,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.json());
-//app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 
 //Connexió a la BDD de MongoDB
@@ -19,6 +19,23 @@ mongoose
 
 //Importarem el nostre model de dades indicant la ruta corresponent
 const userSchema = require('./models/Item');
+//ENDPOINT per crear un usuari;
+app.post("/users", (req, res) => {
+  const user = userSchema(req.body);
+  user
+    .save()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
+//ENDPOINT per obtenir usuaris
+app.get("/users", (req, res) => {
+  userSchema
+    .find()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 /*
 app.get('/', (req, res) => {
   userSchema.find()
@@ -26,22 +43,7 @@ app.get('/', (req, res) => {
     .catch(err => res.status(404).json({ msg: 'No items found' }));
 });*/
 
-//Crear usuari
-/*app.post('/item/add', (req, res) => {
-  const user = new Item({
-    name: req.body.name
-  });
-  //Amb el save guardem l'usuari a la BDD de MongoDB
-  user.save().then(item => res.redirect('/'));
-});*/
 
-router.post("/item/add", (req, res) => {
-  const user = userSchema(req.body);
-  user
-    .save()
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
-});
 
 const port = 3000;  
 
