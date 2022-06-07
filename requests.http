@@ -3,9 +3,9 @@ POST http://localhost:80/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "manel",
-    "username": "manel_77",
-    "password": "prueba66"
+    "name": "david44444",
+    "username": "david5445",
+    "password": "prueba5445"
 }
 
 ###
