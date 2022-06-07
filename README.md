@@ -1,12 +1,10 @@
-# Node App with MongoDB in Docker Containers
+**David Romero i Gabriel Dueñas**
+**Xarxa Social**
 
-Tutorial
----------
 Executarem amb:
 docker-compose build
 docker-compose up
-
-[Docker compose : NodeJS with MongoDB](https://www.bogotobogo.com/DevOps/Docker/Docker-Compose-Node-MongoDB.php) 
+Es necessari tenir el programa DOCKER en funcionament.
 
 -Explicacio Creació Docker;
 
@@ -25,3 +23,18 @@ El Docker-compose permet compondré diferents imatges a la vegada. En aquest arx
 
 -Explicació creació API REST:
 
+En primer lloc crearem un clúster en Mongo Atlas, una plataforma gratuïta que hem decidit utilitzar per tal de desenvolupar el nostre projecte.
+En configuració de xarxa habilitarem l’accés a qualsevol ip, que es el mateix que posar la 0.0.0.0/0.
+Inicialitzem les variables corresponents per poder treballar amb el mòdul express.
+Instal·larem un mòdul anomenat nodemon que ens facilitarà la feina de desenvolupament permitint-nos reiniciar el server automàticament cada vegada que guardem el codi.
+Per instal·lar-ho hem fet; “npm i nodemon -D” i, a més a més, afegirem en el Package.json iniciar amb el servei nodemon en comptes de node. 
+Utilitzarem el mòdul MONGOOSE per establir la connexió amb la nostre BDD creada prèviament en el Mongo Atlas.
+Per tal de connectar-nos requerirem de la PASS que proporciona MongoDB en format de codi i únicament haurem de modificar la paraula password amb la nostre PASS definida prèviament.
+En MongoDB necessitarem “Schemas” per tal de poder introduir els usuaris a la BDD, es a dir, li hem de dir a MongoDB com seran els tipus de dades que li entrarem a la BDD.
+En aquesta estructura de dades definirem el tipus de dada i si es requerit o no.
+Un cop tenim el model de dades d’un usuari l’haurem d’exportar.
+A continuació requerirem d’aquest model de dades en el nostre Index.js i el cridarem amb un require i indicarem la ruta corresponent.
+Crearem un fitxer de REQUESTS per simular les requests i anar verificant el correcte funcionament de la nostre API. 
+Per fer això instal·larem la extensió REST Client en el visual Studio code.
+Utilitzarem el mètode save per guardar els usuaris en la BDD i despres el motde find per cercar-los.
+Per actualitzar usuari utilitzarem el mètode UpdateOne i en el request http en comptes de POST utilitzarem PUT.

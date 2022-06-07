@@ -3,9 +3,9 @@ POST http://localhost:80/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "david",
-    "username": "david55",
-    "password": "prueba55"
+    "name": "manel",
+    "username": "manel_77",
+    "password": "prueba66"
 }
 
 ###
@@ -19,7 +19,7 @@ PUT http://localhost:80/users/629e33bd1a3bd30014313ad5 HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "DAVID ROMERO RODILLA",
+  "name": "DAVID ROMERO RODILLA PRUEBA",
   "username": "DROMERO99999",
   "password": "contraseña55contraseña55"
 }
