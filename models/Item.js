@@ -18,4 +18,5 @@ const userSchema = new Schema({
   }
 });
 //Exportem el model de dades
+//comentario
 module.exports = Item = mongoose.model('Usuari', userSchema);

@@ -21,7 +21,7 @@ El Dockerfile ens servirà per a crear la imatge del contenidor que utilitzarem,
 A continuación utilitzarem el Docker-compose per tal d’implementar ambdos contenidos, es a dir, el node i la nostre base de dades, en aquest cas MongoDB.
 El Docker-compose permet compondré diferents imatges a la vegada. En aquest arxiu amb extensio .yml s’indiquen els serveis que s’utilitzaran, en el nostre cas Node i Mongo, els ports que utilitzarem i, per ultim els volumes per a copiar fitxers de local al contenidor.  
 
--Explicació creació API REST:
+-Explicació creació API REST-:
 
 En primer lloc crearem un clúster en Mongo Atlas, una plataforma gratuïta que hem decidit utilitzar per tal de desenvolupar el nostre projecte.
 En configuració de xarxa habilitarem l’accés a qualsevol ip, que es el mateix que posar la 0.0.0.0/0.
